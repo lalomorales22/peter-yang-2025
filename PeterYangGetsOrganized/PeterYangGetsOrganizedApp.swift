@@ -1,32 +1,32 @@
-//
-//  PeterYangGetsOrganizedApp.swift
-//  PeterYangGetsOrganized
-//
-//  Created by brain on 1/12/25.
-//
-
 import SwiftUI
-import SwiftData
 
 @main
 struct PeterYangGetsOrganizedApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    @StateObject private var dataStore = DataStore()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            // We can use a TabView to show “Home,” “Stats,” and “Settings.”
+            TabView {
+                ContentView()
+                    .tabItem {
+                        Label("Home", systemImage: "house.fill")
+                    }
+                    .environmentObject(dataStore)
+
+                StatsView()
+                    .tabItem {
+                        Label("Stats", systemImage: "chart.line.uptrend.xyaxis")
+                    }
+                    .environmentObject(dataStore)
+
+                SettingsView()
+                    .tabItem {
+                        Label("Settings", systemImage: "gearshape.fill")
+                    }
+                    .environmentObject(dataStore)
+            }
+            .preferredColorScheme(.dark)  // Force a dark theme for the entire app
         }
-        .modelContainer(sharedModelContainer)
     }
 }

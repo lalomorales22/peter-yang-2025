@@ -1,18 +1,7 @@
-//
-//  Item.swift
-//  PeterYangGetsOrganized
-//
-//  Created by brain on 1/12/25.
-//
-
 import Foundation
-import SwiftData
 
-@Model
-final class Item {
-    var timestamp: Date
-    
-    init(timestamp: Date) {
-        self.timestamp = timestamp
-    }
+struct Item: Identifiable, Equatable {
+    let id = UUID()
+    var title: String
+    var isMorning: Bool  // true = morning, false = night
 }

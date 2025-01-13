@@ -1,17 +1,11 @@
-//
-//  PeterYangGetsOrganizedTests.swift
-//  PeterYangGetsOrganizedTests
-//
-//  Created by brain on 1/12/25.
-//
-
-import Testing
+import XCTest
 @testable import PeterYangGetsOrganized
 
-struct PeterYangGetsOrganizedTests {
+final class PeterYangGetsOrganizedTests: XCTestCase {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    func testCreatingDailyLog() throws {
+        let store = DataStore()
+        let todayLog = store.getOrCreateLog(for: Date())
+        XCTAssertNotNil(todayLog, "We should be able to create a daily log for today.")
     }
-
 }
