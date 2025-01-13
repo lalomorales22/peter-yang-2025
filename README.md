@@ -1,4 +1,8 @@
 # Peter Yang Gets Organized
+<img width="447" alt="Screenshot 2025-01-13 at 12 03 42 AM" src="https://github.com/user-attachments/assets/f940ecde-c8e8-4c99-8b12-80fa3b76846c" />
+<img width="446" alt="Screenshot 2025-01-13 at 12 03 34 AM" src="https://github.com/user-attachments/assets/cbbf3636-8a08-4dd2-bb1a-76eb568cfd24" />
+<img width="449" alt="Screenshot 2025-01-13 at 12 03 23 AM" src="https://github.com/user-attachments/assets/57c6889f-1c3d-49b4-ade2-c503e80e30a3" />
+
 
 An iOS app built with SwiftUI to help track daily tasks and build consistent habits. The app includes a unique achievement system that gradually unlocks a Bitcoin address as you maintain your daily streak.
 
